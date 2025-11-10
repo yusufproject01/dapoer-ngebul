@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres_container
+    restart: always
+    environment:
+      POSTGRES_USER: myuser123
+      POSTGRES_PASSWORD: mypassword123
+      POSTGRES_DB: mydatabase123
+      JWT_SECRET: ini_kode_rahasia_banget_gaboleh_ada_yang_tau_26052001_*#
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

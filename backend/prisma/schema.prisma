@@ -1,0 +1,86 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  // Use the official Prisma JS client provider and keep default output
+  // so the generated client integrates with the installed @prisma/client package.
+  provider = "prisma-client-js"
+  // remove custom output so the client is generated into node_modules/.prisma/client
+  // output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  name      String
+  email     String    @unique
+  password  String
+  phone     String?
+  address   String?
+  role      String    @default("user")
+  createdAt DateTime  @default(now())
+
+  // Relasi
+  orders    Order[]
+  payments  Payment[]
+}
+
+model Order {
+  id          Int          @id @default(autoincrement())
+  user        User          @relation(fields: [userId], references: [id])
+  userId      Int
+  orderDate   DateTime      @default(now())
+  totalPrice  Int
+  status      String        @default("pending")
+  createdAt   DateTime      @default(now())
+  orderItems  OrderItem[]
+  payments    Payment[]
+}
+
+model OrderItem {
+  id          Int        @id @default(autoincrement())
+  order       Order       @relation(fields: [orderId], references: [id])
+  orderId     Int
+  menuItem    MenuItem    @relation(fields: [menuItemId], references: [id])
+  menuItemId  Int
+  quantity    Int
+  price       Int
+  createdAt   DateTime    @default(now())
+}
+
+
+model MenuItem {
+  id          Int          @id @default(autoincrement())
+  name        String
+  price       Int
+  category    Category       @relation(fields: [categoryId], references: [id])
+  categoryId  Int
+  createdAt   DateTime       @default(now())
+
+  // Relasi
+  orderItems  OrderItem[]
+}
+
+model Category {
+  id          Int          @id @default(autoincrement())
+  name        String
+
+  // Relasi
+  menuItems   MenuItem[]
+}
+
+model Payment {
+  id        Int       @id @default(autoincrement())
+  order     Order     @relation(fields: [orderId], references: [id])
+  orderId   Int
+  user      User      @relation(fields: [userId], references: [id])
+  userId    Int
+  amount    Int
+}
