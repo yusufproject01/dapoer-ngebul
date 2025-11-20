@@ -24,34 +24,39 @@ export default function OrderPage() {
     message += `%0A%0AMohon konfirmasi ketersediaannya ya!`;
 
     window.open(`https://wa.me/${adminNumber}?text=${message}`, "_blank");
+
+    useCartStore.setState({ cart: [] });
+    setAddress("");
   };
 
   return (
-    <main className="min-h-screen w-full bg-[#faf8f3] px-6 pb-36 pt-10">
-      <h1 className="text-3xl font-bold mb-6 text-leafGreen">
+    <main className="min-h-screen w-full bg-[#faf8f3] px-5 sm:px-8 md:px-16 lg:px-24 pb-40 pt-20">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-leafGreen">
         Ringkasan Pesanan
       </h1>
 
       {/* Jika Keranjang Kosong */}
       {cart.length === 0 && (
-        <p className="text-center text-gray-600 mt-10">
+        <p className="text-center text-gray-600 mt-10 text-lg">
           Keranjang masih kosong.
         </p>
       )}
 
       {/* List Pesanan */}
-      <div className="space-y-4 mb-10">
+      <div className="space-y-4 mb-12 max-w-3xl">
         {cart.map((item: any) => (
           <div
             key={item.id}
             className="flex items-center justify-between p-4 bg-white rounded-xl shadow-md border border-gray-100"
           >
             <div>
-              <p className="font-semibold text-gray-800">{item.name}</p>
+              <p className="font-semibold text-gray-800 text-base sm:text-lg">
+                {item.name}
+              </p>
               <p className="text-sm text-gray-500">Qty: {item.qty}</p>
             </div>
 
-            <p className="font-bold text-orangeAccent">
+            <p className="font-bold text-orangeAccent text-base sm:text-lg">
               Rp {(item.qty * item.price).toLocaleString()}
             </p>
           </div>
@@ -59,7 +64,7 @@ export default function OrderPage() {
       </div>
 
       {/* Input Alamat */}
-      <h2 className="text-xl font-bold mb-3 text-gray-800">
+      <h2 className="text-xl sm:text-2xl font-bold mb-3 text-gray-800">
         Alamat Pengantaran
       </h2>
 
@@ -67,27 +72,31 @@ export default function OrderPage() {
         placeholder="Masukkan alamat lengkap…"
         value={address}
         onChange={(e) => setAddress(e.target.value)}
-        className="w-full p-4 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-orangeAccent h-32 bg-white"
+        className="w-full max-w-3xl p-4 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-orangeAccent h-32 bg-white text-base"
       />
 
       {/* Sticky Bottom Checkout Card */}
-      <div className="fixed bottom-0 left-0 w-full bg-white shadow-xl p-5 border-t border-gray-200">
-        <div className="flex items-center justify-between mb-4">
-          <p className="text-lg font-semibold text-gray-700">Total</p>
-          <p className="text-2xl font-bold text-orangeAccent">
-            Rp {total.toLocaleString()}
-          </p>
-        </div>
+      <div className="fixed bottom-0 left-0 w-full bg-white shadow-[0_-4px_14px_rgba(0,0,0,0.08)] p-5 border-t border-gray-200">
+        <div className="max-w-3xl mx-auto">
+          <div className="flex items-center justify-between mb-4">
+            <p className="text-lg sm:text-xl font-semibold text-gray-700">
+              Total
+            </p>
+            <p className="text-2xl font-bold text-orangeAccent">
+              Rp {total.toLocaleString()}
+            </p>
+          </div>
 
-        <button
-          disabled={!address}
-          onClick={sendToWhatsapp}
-          className={`w-full py-4 rounded-xl text-white font-semibold text-lg transition ${
-            address ? "bg-orangeAccent" : "bg-gray-400"
-          }`}
-        >
-          Pesan via WhatsApp
-        </button>
+          <button
+            disabled={!address}
+            onClick={sendToWhatsapp}
+            className={`w-full py-4 rounded-xl text-white font-semibold text-lg transition ${
+              address ? "bg-orangeAccent" : "bg-gray-400"
+            }`}
+          >
+            Pesan via WhatsApp
+          </button>
+        </div>
       </div>
     </main>
   );

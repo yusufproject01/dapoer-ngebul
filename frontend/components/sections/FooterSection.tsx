@@ -13,7 +13,7 @@ export default function FooterSection() {
           <div className="flex items-center gap-3 mb-4">
             <div className="w-14 h-14 flex justify-center items-center rounded-full">
               <Image
-                src={"/Icon/Dapoer-Ngebul.png"}
+                src={"/Icon/Dapoer-Ngebul-03.png"}
                 alt="Dapur Ngebul"
                 width={500}
                 height={500}

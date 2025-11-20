@@ -18,11 +18,17 @@ export default function FootChat({
   return (
     <section className="w-full px-6 my-8">
       <div className="w-full bg-white rounded-xl shadow-md py-10 flex flex-col items-center justify-center gap-y-4">
-        <h1 className="text-2xl text-leafGreen">{Title}</h1>
-        <p className="text-xl text-slate-600">{Description}</p>
+        <div className="flex flex-col">
+          <h1 className="sm:text-2xl text-xl text-center text-leafGreen">
+            {Title}
+          </h1>
+          <p className="sm:text-xl text-sm text-center text-slate-600">
+            {Description}
+          </p>
+        </div>
         <button
           onClick={handleClick}
-          className="py-2 px-4 bg-leafGreen text-white rounded-full"
+          className="sm:text-base text-sm py-2 sm:px-4 px-6 bg-leafGreen text-white rounded-full"
         >
           {TextBtn}
         </button>

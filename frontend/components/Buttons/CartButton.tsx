@@ -10,7 +10,7 @@ export default function CartButton() {
   return (
     <Link
       href="/menu/order"
-      className="fixed bottom-6 right-6 bg-leafGreen text-white p-4 rounded-full shadow-lg"
+      className="fixed bottom-6 right-6 bg-leafGreen text-white p-4 rounded-full shadow-lg z-20"
     >
       <div className="relative">
         <FaShoppingBag size={28} />

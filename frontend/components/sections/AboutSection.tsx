@@ -4,7 +4,7 @@ import { poppins } from "../Typography";
 export default function AboutSection() {
   return (
     <section
-      className={`${poppins.className} w-full pt-20 pb-14 px-6 md:px-16 bg-white flex flex-col md:flex-row items-center justify-between gap-12`}
+      className={`${poppins.className} w-full pt-sm:20 pt-12 pb-14 px-6 md:px-16 bg-white flex flex-col md:flex-row items-center justify-between sm:gap-12`}
     >
       {/* Bagian Teks */}
       <div className="flex-1 text-gray-800">
@@ -28,8 +28,8 @@ export default function AboutSection() {
       </div>
 
       {/* Bagian Gambar */}
-      <div className="flex-1">
-        <div className="relative w-full h-[350px] md:h-[420px] rounded-2xl overflow-hidden shadow-xl">
+      <div className="sm:flex-1 hidden">
+        <div className="relative w-full h-[250px] md:h-[420px] rounded-2xl overflow-hidden shadow-xl">
           <Image
             src="/Dapur/dapur-01.png"
             alt="Dapoer Ngebul Kitchen"
