@@ -26,7 +26,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className={`${poppins.className} w-full bg-cream pt-20`}>
+    <main className={`${poppins.className} w-full bg-cream sm:pt-20 pt-0`}>
       <Headers
         Title="Hubungi Kami"
         Description="Ada pertanyaan atau ingin memesan? Kami siap membantu Anda"
