@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "Masakan Rumahan Berkualitas, Dibuat dengan Cinta dan Kualitas Terjaga",
   icons: {
-    icon: "/Icon/Dapoer-Ngebul.png",
+    icon: "/favicon.png",
   },
 };
 
