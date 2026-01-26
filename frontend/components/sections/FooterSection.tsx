@@ -92,9 +92,9 @@ export default function FooterSection() {
             <li className="flex items-start gap-2">
               <BiMapPin className="w-5 h-5 text-[#F5A623] mt-0.5" />
               <span>
-                Jl. Kesambi Raya No. 123
+                Pabedilan Wetan, Cirebon
                 <br />
-                Cirebon, Jawa Barat
+                Jawa Barat 45193
               </span>
             </li>
             <li className="flex items-center gap-2">
@@ -103,7 +103,7 @@ export default function FooterSection() {
             </li>
             <li className="flex items-center gap-2">
               <BiMailSend className="w-5 h-5 text-[#F5A623]" />
-              <span>dapoerngebul@email.com</span>
+              <span>dapoerngebul@gmail.com</span>
             </li>
           </ul>
         </div>

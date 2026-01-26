@@ -66,7 +66,7 @@ export default function Navbar() {
                 className={`${
                   pathname === link
                     ? "text-leafGreen font-semibold"
-                    : "text-slate-700"
+                    : "text-black"
                 }`}
               >
                 {name}

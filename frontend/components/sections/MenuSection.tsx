@@ -11,7 +11,7 @@ export default function MenuSection() {
 
   return (
     <section
-      className={`${poppins.className} w-full sm:py-20 pt-0 px-6 md:px-16 bg-warmCream text-center`}
+      className={`${poppins.className} w-full sm:py-20 pt-0 px-6 md:px-16 bg-cream text-center`}
     >
       <h2 className="text-2xl md:text-4xl font-bold text-leafGreen mb-2">
         Menu Populer Kami
@@ -35,7 +35,7 @@ export default function MenuSection() {
         {popularMenu.map((item) => (
           <div
             key={item.id}
-            className="bg-white shadow rounded-lg p-4 w-full max-w-xs"
+            className="bg-white shadow rounded-lg p-4 w-full max-w-xs text-black"
           >
             <div className="w-full h-40 relative mb-4">
               <Image

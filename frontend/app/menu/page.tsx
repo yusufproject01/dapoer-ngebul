@@ -53,7 +53,7 @@ export default function MenuPage() {
       </div>
 
       {/* MENU LIST */}
-      <div className="px-6 md:px-10 lg:px-20 xl:px-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 pb-16 max-w-7xl mx-auto">
+      <div className="px-6 sm:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 pb-16 max-w-7xl w-full mx-auto">
         {categoryData[activeCategory].map((item: MenuItem) => (
           <div
             key={item.id}
@@ -81,7 +81,7 @@ export default function MenuPage() {
               </p>
 
               <div className="flex items-center justify-between">
-                <p className="text-2xl font-bold text-gray-800">
+                <p className="sm:text-xl text-lg font-bold text-gray-800">
                   Rp {item.price.toLocaleString("id-ID")}
                 </p>
 
@@ -98,23 +98,22 @@ export default function MenuPage() {
       </div>
 
       {/* CHECKOUT BUTTON (Sticky on mobile) */}
-      <div className="z-10 mt-8 pb-10 text-center sticky bottom-0 bg-cream/80 backdrop-blur-sm py-6 border-t border-gray-300">
+      <div className="z-10 mt-8 pb-10 text-center sticky bottom-0 bg-white backdrop-blur-sm py-10 border-t border-slate-100">
         <Link
           href="/menu/order"
           className="bg-leafGreen text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:opacity-90 transition"
         >
           Lanjutkan ke Pembayaran
         </Link>
+        {/* Konsultasi */}
+        <FootChat
+          Title="Ingin Menu Custom?"
+          Description="Hubungi kami untuk request menu atau paket sesuai keinginan Anda!"
+          TextBtn="Konsultasi via WhatsApp"
+        />
+        {/* Floating Cart Button */}
+        <CartButton />
       </div>
-
-      {/* Konsultasi */}
-      <FootChat
-        Title="Ingin Menu Custom?"
-        Description="Hubungi kami untuk request menu atau paket sesuai keinginan Anda!"
-        TextBtn="Konsultasi via WhatsApp"
-      />
-      {/* Floating Cart Button */}
-      <CartButton />
 
       <FooterSection />
     </main>

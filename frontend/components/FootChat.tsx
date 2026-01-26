@@ -17,7 +17,7 @@ export default function FootChat({
   };
   return (
     <section className="w-full px-6 my-8">
-      <div className="w-full bg-white rounded-xl shadow-md py-10 flex flex-col items-center justify-center gap-y-4">
+      <div className="w-full bg-white rounded-xl shadow-md border border-slate-200 py-10 flex flex-col items-center justify-center gap-y-4">
         <div className="flex flex-col">
           <h1 className="sm:text-2xl text-xl text-center text-leafGreen">
             {Title}

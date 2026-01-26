@@ -56,12 +56,11 @@ export default function GallerySection() {
     <section
       className={`${poppins.className} w-full min-h-screen bg-[#F8F1E7] sm:pt-20 pt-0`}
     >
+      <Headers
+        Title="Gallery Dapoer Ngebul"
+        Description="Hasil karya kuliner kami yang menggugah selera"
+      />
       <div className="max-w-7xl mx-auto">
-        <Headers
-          Title="Gallery Dapoer Ngebul"
-          Description="Hasil karya kuliner kami yang menggugah selera"
-        />
-
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-6 sm:px-8 pt-10">
           {galleryImages.map((item, idx) => (
             <div

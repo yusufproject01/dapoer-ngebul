@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { poppins } from "../Typography";
+import { dm_sans, poppins } from "../Typography";
 import Link from "next/link";
 
 export default function HeroSection() {
@@ -10,20 +10,22 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="w-full h-full absolute inset-0">
         <Image
-          src="/Background/Traditional-Food/traditional-food-01.png"
+          src="/Hero/IMG-Hero.png"
           alt="Dapoer Ngebul"
           fill
-          className="object-cover brightness-50"
+          className="object-cover brightness-65"
           priority
         />
       </div>
 
       {/* Overlay Content */}
       <section className="relative z-20 w-full h-full flex flex-col justify-center items-center text-center px-4">
-        <h1 className="text-2xl md:text-3xl lg:text-6xl font-bold text-white leading-tight">
+        <h1
+          className={`${dm_sans.className} text-2xl md:text-3xl lg:text-6xl font-bold text-white leading-tight`}
+        >
           Masakan Rumahan, Rasa Tak Terlupakan
         </h1>
-        <p className="mt-4 text-lg md:text-xl text-gray-200">
+        <p className="mt-4 text-lg md:text-xl text-white">
           Dapoer Ngebul — Dari Dapur Rumah ke Meja Anda
         </p>
 

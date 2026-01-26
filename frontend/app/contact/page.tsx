@@ -39,7 +39,7 @@ export default function ContactPage() {
           <h1 className="text-3xl text-leafGreen mb-6">Kirim Pesan</h1>
 
           {/* Input Field */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 text-black">
             <div>
               <label className="block mb-1 text-sm">Nama Lengkap</label>
               <input
@@ -89,7 +89,7 @@ export default function ContactPage() {
         </div>
 
         {/* ================= CONTACT CARDS ================= */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 text-slate-800">
           {/* Alamat */}
           <div className="bg-white shadow-md rounded-xl p-6 flex gap-4 items-start">
             <FaMapMarkerAlt size={38} className="text-leafGreen shrink-0" />
@@ -118,17 +118,17 @@ export default function ContactPage() {
 
           {/* Email */}
           <div className="bg-white shadow-md rounded-xl p-6 flex gap-4 items-start">
-            <FaEnvelope size={38} className="text-yellow-600 shrink-0" />
+            <FaEnvelope size={38} className="text-red-400 shrink-0" />
             <div>
               <h2 className="text-lg font-semibold mb-1">Email</h2>
-              <p className="text-slate-700 text-sm">dapoerngebul@email.com</p>
+              <p className="text-slate-700 text-sm">dapoerngebul@gmail.com</p>
               <p className="text-xs text-slate-500">Respon 1x24 jam</p>
             </div>
           </div>
 
           {/* Jam Operasional */}
           <div className="bg-white shadow-md rounded-xl p-6 flex gap-4 items-start">
-            <FaClock size={42} className="text-brown-500 shrink-0" />
+            <FaClock size={42} className="text-blue-400 shrink-0" />
             <div>
               <h2 className="text-lg font-semibold mb-1">Jam Operasional</h2>
               <p className="text-slate-700 text-sm">

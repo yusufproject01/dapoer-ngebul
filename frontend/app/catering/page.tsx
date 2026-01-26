@@ -8,6 +8,8 @@ import Headers from "@/components/Headers";
 import FooterSection from "@/components/sections/FooterSection";
 import { packagesCatering } from "@/lib/Text/Value/CateringValue";
 import FootChatGreen from "@/components/FootChatGreen";
+import { cateringImages } from "@/lib/Datas/Catering-img";
+import Image from "next/image";
 
 export default function CateringPage() {
   const [phone, message] = useToWhatsApp();
@@ -125,13 +127,20 @@ export default function CateringPage() {
         </h1>
 
         <div className="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
-          {packagesCatering.map((pkg, index) => (
+          {cateringImages.map((cat) => (
             <div
-              key={index}
-              className="w-full max-w-xs h-40 px-4 flex flex-col items-center justify-center text-center rounded-xl bg-cream hover:bg-white hover:border-2 border-leafGreen shadow-sm transition"
+              key={cat.id}
+              className="w-full max-w-sm py-3 p-3 flex flex-col items-center justify-center text-center rounded-xl bg-cream hover:bg-white hover:border-2 border-leafGreen shadow-sm transition gap-y-2"
             >
-              <h1 className="text-lg text-leafGreen mb-1">{pkg.title}</h1>
-              <p className="text-sm text-slate-600">{pkg.text}</p>
+              <Image
+                src={cat.src}
+                alt={cat.alt}
+                width={500}
+                height={500}
+                className="w-full h-40 object-cover rounded-lg"
+              />
+              <h1 className="text-lg text-leafGreen mb-1">{cat.title}</h1>
+              <p className="text-sm text-slate-600">{cat.description}</p>
             </div>
           ))}
         </div>
